@@ -79,6 +79,10 @@ export default class CampaignUrl extends React.Component {
       problematicElement: element,
       // The label sent to google analytics
       problematicEventLabel: eventLabel,
+
+      // True if the user shortened a URL and will be warned about the bitly
+      // migration
+      showBitlyNotice: false,
     };
   }
 
@@ -126,7 +130,10 @@ export default class CampaignUrl extends React.Component {
    * is displayed.
    */
   shortenUrl = () => {
-    this.setState({isShorteningUrl: true});
+    this.setState({
+      isShorteningUrl: true,
+      showBitlyNotice: true,
+    });
 
     return shortenUrl(this.props.url)
     .then(shortUrl => {
@@ -228,6 +235,7 @@ export default class CampaignUrl extends React.Component {
           </div>
           {problematicElement}
           {this.renderButtons(problematicElement ? true : false)}
+          {this.renderBitlyNotice()}
           <div ref="url" className="u-visuallyHidden">{url}</div>
         </div>
       </div>
@@ -310,6 +318,21 @@ export default class CampaignUrl extends React.Component {
         }
       </div>
     ) : null;
+  }
+
+  renderBitlyNotice() {
+    return this.state.showBitlyNotice ?
+      <div className="CampaignUrlResult-bitlyNotice">
+        <Icon type="warning" /> <strong>Notice:</strong> Due to the
+        <a href="https://developers.googleblog.com/2018/03/transitioning-google-url-shortener.html">
+        deprecation</a> of <a href="https://goo.gl/">Google's url shortener</a>,
+        we will be transitioning the URL shortener on this page to
+        <a href="https://bitly.com/">Bitly</a> on Monday, June 23, 2018, at or
+        around 11am PST. The first time you use the new URL shortener, you will
+        be prompted to authenticate with the Bitly API, so that we can create
+        shortlinks on your behalf.
+      </div>
+    : null
   }
 
 
