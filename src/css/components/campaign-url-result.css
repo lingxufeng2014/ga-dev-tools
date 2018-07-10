@@ -47,6 +47,14 @@ limitations under the License.
   margin: 0 0 var(--gap);
 }
 
+.CampaignUrlResult-bitlyNotice {
+  background: #fff3cd;
+  padding: .5em 1em;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #f5c6cb;
+}
+
 @media (--break-lg) {
   .CampaignUrlResult {
     margin-bottom: var(--gap-lg);

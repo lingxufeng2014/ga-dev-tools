@@ -323,14 +323,14 @@ export default class CampaignUrl extends React.Component {
   renderBitlyNotice() {
     return this.state.showBitlyNotice ?
       <div className="CampaignUrlResult-bitlyNotice">
-        <span><Icon type="warning" /> <strong>Notice:</strong> Due to the
-        <a href="https://developers.googleblog.com/2018/03/transitioning-google-url-shortener.html">
+        <span><Icon type="warning" /> <strong>Notice:</strong> Due to
+        the <a href="https://developers.googleblog.com/2018/03/transitioning-google-url-shortener.html">
         deprecation</a> of <a href="https://goo.gl/">Google's url shortener</a>,
-        we will be transitioning the URL shortener on this page to
-        <a href="https://bitly.com/">Bitly</a> on Monday, June 23, 2018, at or
-        around 11am PST. The first time you use the new URL shortener, you will
-        be prompted to authenticate with the Bitly API, so that we can create
-        shortlinks on your behalf.</span>
+        we will be transitioning the URL shortener on this page
+        to <a href="https://bitly.com/">Bitly</a> on Monday, June 23, 2018, at
+        or around 11am PST. The first time you use the new URL shortener, you
+        will be prompted to authenticate with the Bitly API, so that we can
+        create shortlinks on your behalf.</span>
       </div>
     : null
   }
