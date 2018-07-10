@@ -53,8 +53,6 @@ limitations under the License.
   margin-bottom: 1rem;
   border-radius: 4px;
   border: 1px solid #ffeeba;
-
-  display: inline-flex;
 }
 
 @media (--break-lg) {
