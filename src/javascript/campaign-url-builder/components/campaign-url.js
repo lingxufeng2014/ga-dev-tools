@@ -331,7 +331,7 @@ export default class CampaignUrl extends React.Component {
           </a>, we will be transitioning the URL shortener on this page
           to <a href="https://bitly.com/">Bitly</a> on Tuesday, July 17, 2018,
           at or around 11am PST. The first time you use the new URL shortener,
-          you will be prompted to authenticate with the Bitly API, so that we
+          it will prompt you to authenticate with the Bitly API, so that we
           can create shortlinks on your behalf.</span>
         </div>
       : null;
